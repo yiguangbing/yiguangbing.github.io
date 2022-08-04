@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>SSM框架的简单介绍</title>
+      <link href="/2022/08/04/SSM%E6%A1%86%E6%9E%B6%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/"/>
+      <url>/2022/08/04/SSM%E6%A1%86%E6%9E%B6%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、SSM框架的简单介绍"><a href="#一、SSM框架的简单介绍" class="headerlink" title="一、SSM框架的简单介绍"></a><strong>一、SSM框架的简单介绍</strong></h2><h3 id="1、什么是SSM框架呢？"><a href="#1、什么是SSM框架呢？" class="headerlink" title="1、什么是SSM框架呢？"></a><strong>1、什么是SSM框架呢？</strong></h3><p>SSM框架就是<strong>Spring</strong>、<strong>Spring MVC</strong>和<strong>MyBatis</strong>框架的缩写，是标准的MVC模式，将整个系统划分为四层：<strong>表现层</strong>、<strong>controller层</strong>、<strong>service层</strong>、<strong>DAO层。</strong>使用SSM框架的好处是在于其易复用和简化开发,掌握了每个框架的核心思想。</p><p>其中，spring MVC负责请求的转发和视图管理；spring实现业务对象管理；MyBatis作为数据对象的持久化引擎。</p><p><strong>（1）Spring</strong></p><p>Spring是一个开源框架，Spring是于2003 年兴起的一个轻量级的Java 开发框架，由Rod Johnson 在其著作Expert One-On-One J2EE Development and Design中阐述的部分理念和原型衍生而来。它是为了解决企业应用开发的复杂性而创建的。Spring使用基本的JavaBean来完成以前只可能由EJB完成的事情。然而，Spring的用途不仅限于服务器端的开发。从简单性、可测试性和松耦合的角度而言，任何Java应用都可以从Spring中受益。 简单来说，Spring是一个轻量级的控制反转（IoC）和面向切面（AOP）的容器框架。</p><p><strong>（2）SpringMVC</strong></p><p>Spring MVC属于SpringFrameWork的后续产品，已经融合在Spring Web Flow里面。Spring MVC 分离了控制器、模型对象、分派器以及处理程序对象的角色，这种分离让它们更容易进行定制。</p><p><strong>（3）MyBatis</strong></p><p>MyBatis 本是apache的一个开源项目iBatis, 2010年这个项目由apache software foundation 迁移到了google code，并且改名为MyBatis 。MyBatis是一个基于Java的持久层框架。iBATIS提供的持久层框架包括SQL Maps和Data Access Objects（DAO）。MyBatis 消除了几乎所有的JDBC代码和参数的手工设置以及结果集的检索。MyBatis 使用简单的 XML或注解用于配置和原始映射，将接口和 Java 的POJOs（Plain Old Java Objects，普通的 Java对象）映射成数据库中的记录。</p><h2 id="二、SSM操作原理"><a href="#二、SSM操作原理" class="headerlink" title="二、SSM操作原理"></a><strong>二、SSM操作原理</strong></h2><h3 id="1、Spring-MVC："><a href="#1、Spring-MVC：" class="headerlink" title="1、Spring MVC："></a><strong>1、Spring</strong> <strong>MVC：</strong></h3><p>客户端发送请求到DispacherServlet（分发器），由DispacherServlet控制器查询HanderMapping，找到处理请求的Controller。Controller调用业务逻辑处理后，返回ModelAndView；.DispacherSerclet查询视图解析器，找到ModelAndView指定的视图，视图负责将结果显示到客户端。</p><h3 id="2、Spring："><a href="#2、Spring：" class="headerlink" title="2、Spring："></a><strong>2、Spring：</strong></h3><p>IOC容器应该就是我们平时开发接触最多的，它可以装载bean，有了这个机制，我们就不用在每次使用这个类的时候为它初始化，很少看到关键字new。另外spring的aop，事务管理等等都是我们经常用到的。</p><h3 id="3、MyBatis："><a href="#3、MyBatis：" class="headerlink" title="3、MyBatis："></a><strong>3、MyBatis：</strong></h3><p>MyBatis是对jdbc的封装，它让数据库底层操作变的透明。MyBatis的操作都是围绕一个sqlSessionFactory实例展开的。MyBatis通过配置文件关联到各实体类的Mapper文件，Mapper文件中配置了每个类对数据库所需进行的sql语句映射。在每次与数据库交互时，通过sqlSessionFactory拿到一个sqlSession，再执行sql命令。</p><h2 id="三、SSM框架的优势："><a href="#三、SSM框架的优势：" class="headerlink" title="三、SSM框架的优势："></a><strong>三、SSM框架的优势：</strong></h2><h3 id="1、Spring的优势"><a href="#1、Spring的优势" class="headerlink" title="1、Spring的优势:"></a><strong>1、Spring的优势:</strong></h3><p>Spring的核心思想是IoC（控制反转），即不再需要程序员去显式地“new”一个对象，而是让Spring框架帮你来完成这一切。通过Spring的IOC特性，将对象之间的依赖关系交给了Spring控制，方便解耦，简化了开发。</p><h3 id="2、Spring-MVC的优势"><a href="#2、Spring-MVC的优势" class="headerlink" title="2、Spring MVC的优势:"></a><strong>2、Spring MVC的优势:</strong></h3><p>（1）Spring MVC是使用了MVC设计思想的轻量级web框架，对web层进行解耦，使我们开发更简洁；</p><p>（2）与Spring无缝衔接；</p><p>（3）灵活的数据验证，格式化，数据绑定机制。</p><h3 id="3、MyBatis的优势"><a href="#3、MyBatis的优势" class="headerlink" title="3、MyBatis的优势:"></a><strong>3、MyBatis的优势:</strong></h3><p>（1）数据库的操作(sql)采用xml文件配置，解除了sql和代码的耦合；</p><p>（2）提供映射标签，支持对象和和数据库orm字段关系的映射，支持对象关系映射标签，支持对象关系的组建；</p><p>（3）提供了xml标签，支持动态的sql。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术类 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2022/08/02/hello-world/"/>
       <url>/2022/08/02/hello-world/</url>
